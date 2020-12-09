@@ -1,0 +1,50 @@
+<annotation>
+    <filename>1.jpg</filename>
+    <folder>example_folder</folder>
+    <source>
+        <sourceImage>The MIT-CSAIL database of objects and scenes</sourceImage>
+        <sourceAnnotation>LabelMe Webtool</sourceAnnotation>
+    </source>
+    <object>
+        <name>were</name>
+        <deleted>0</deleted>
+        <verified>0</verified>
+        <occluded>no</occluded>
+        <taglist></taglist>
+        <parts>
+            <hasparts></hasparts>
+            <ispartof></ispartof>
+        </parts>
+        <date>13-06-20 23:34:35:773</date>
+        <id>0</id>
+        <type>bounding_box</type>
+        <polygon>
+            <username>reena</username>
+            <pt>
+                <x>33</x>
+                <y>25</y>
+                <time>13-06-20 23:34:29:397</time>
+            </pt>
+            <pt>
+                <x>73</x>
+                <y>25</y>
+                <time>13-06-20 23:34:30:509</time>
+            </pt>
+            <pt>
+                <x>73</x>
+                <y>49</y>
+                <time>undefined</time>
+            </pt>
+            <pt>
+                <x>33</x>
+                <y>49</y>
+                <time>undefined</time>
+            </pt>
+            <closed_date>13-06-20 23:34:30:512</closed_date>
+        </polygon>
+    </object>
+    <imagesize>
+        <nrows>120</nrows>
+        <ncols>418</ncols>
+    </imagesize>
+</annotation>

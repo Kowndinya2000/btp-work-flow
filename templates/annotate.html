@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/annotate.css') }}">
+</head>
+
+<body>
+    <section class="hero is-primary is-fullheight">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+       <ul>
+          {% for message in messages %}
+          <li>{{ message }}</li>
+          {% endfor %}
+       </ul>
+    {% endif %}
+ {% endwith %}
+<!-- <img id="scream" width="220" height="277" src="family.png" alt="The Scream"> -->
+<!-- <img width=99% data-nr="{{ i }}" src="{{ url_for('static',filename='img/'~i~'.png') }}"/> -->
+<div id="paint">
+  <canvas id="canvas" resize></canvas>
+</div>
+
+<div id= leftbar class="sidebar">
+    <form method="post" id="new_message" action="/add">
+        <p>
+            <input type="button" class="button" value="draw" onclick="use_tool('draw');" />
+            <input type="button" value="erase" onclick="use_tool('erase');" />  
+        </p>
+        <p>
+          <label for="annotation">Annotation:</label><input id="annotation" type="text" size=2>
+          <input type="submit" value="Send" name="commit" id="message_submit"/>
+        </p>
+        <p>
+            <input type="button"  value="Previous" name="Previous" id="Previous">
+            <input type="button"  value="Next" name="next" id="next">
+            <!-- <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-circle-arrow-right"></span> next</a> -->
+        </p>
+    </form>
+    <form action = "/annotate" method = "post" enctype="multipart/form-data">  
+      <input type="file" name="file" />  
+      <input type = "submit" value="Upload" id="Upload">  
+  </form> 
+    <p>
+    <a href="{{ url_for('main.profile') }}" class="button">
+      Profile
+  </a>
+    <a href="{{ url_for('auth.logout') }}" class="button">
+      Logout
+    </a>
+  </p>
+  </div>
+
+
+<script type="text/javascript" src="static/scripts/tools.js"></script>
+</section>
+</body>
+</html>
